@@ -1,0 +1,1 @@
+cd src/ &&  pm2 start --name "tslServer" main.js
