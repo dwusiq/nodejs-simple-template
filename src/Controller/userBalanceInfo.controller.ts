@@ -22,7 +22,7 @@ export class UserBalanceInfoController {
    *
    */
   @Get(":user/list")
-  async queryByUser(@Param("id") user: string) {
+  async queryByUser(@Param("user") user: string) {
     logDebug(`[queryByUser] start`);
     return this.userBalanceInfoManager.queryByUser(user).catch(ErrorHandler.handlerError);
   }

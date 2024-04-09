@@ -3,7 +3,7 @@ import { CommonUtils } from "../../Common/Utils/CommonUtils";
 import { A_MINUTES_MILLSECOND } from "../../Common/Constant";
 import { UserBalanceInfo } from "../../Model/UserBalanceInfo.model";
 import { Op, where } from "sequelize";
-import { getBalance } from "../contract/erc20.service";
+import { formatUnits, getBalance } from "../contract/erc20.service";
 import { logDebug, logError, logInfo } from "../../Common/Utils/LogUtils";
 
 @Injectable()
@@ -43,7 +43,8 @@ export class TaskPullUserBalanceService {
       for (let row of accountRows) {
         currentId = row.id > currentId ? row.id : currentId;
         const balance = await getBalance(row.tokenAddress, row.userAddress);
-        await UserBalanceInfo.update({ balance: balance, updatedAt: new Date() }, { where: { id: row.id } });
+        const balanceFormat = await formatUnits(row.tokenAddress, balance);
+        await UserBalanceInfo.update({ balance: balanceFormat, updatedAt: new Date() }, { where: { id: row.id } });
       }
       handledCount += accountRows.length;
       logDebug(`[pullAllUsersSunToken]. handledCount:${handledCount}`);

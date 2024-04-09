@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "4cb57b22-d406-4cd7-8fd2-d4383c9ea4af",
+		"name": "temp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addUserToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userAddress\":\"0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23\",\r\n    \"tokenAddress\":\"0xaf88d065e77c8cC2239327C5EDb3A432268e5831\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3399/tmpService/api/user-balance/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3399",
+					"path": [
+						"tmpService",
+						"api",
+						"user-balance",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "queryByUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3399/tmpService/api/user-balance/0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3399",
+					"path": [
+						"tmpService",
+						"api",
+						"user-balance",
+						"0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
