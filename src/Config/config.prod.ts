@@ -1,7 +1,10 @@
 let Web3 = require("web3");
 
+const defaultEndPoint= "https://arb1.arbitrum.io/rpc";
+
 export default {
-  web3Bsc: new Web3(new Web3.providers.HttpProvider("https://bsc-dataseed1.defibit.io")),
+  defaultWeb3Obj: new Web3(new Web3.providers.HttpProvider(defaultEndPoint)),
+  defaultEndPoint:defaultEndPoint,
   db: {
     host: "127.0.0.1",
     port: 3366,
@@ -14,5 +17,4 @@ export default {
   },
 
   serverPort: 3399,
-  orderTaskCron: "*/45 * * * * *", //订单处理间隔时间  45秒
 };

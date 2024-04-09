@@ -4,7 +4,7 @@ import config from "./Config";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
-  app.setGlobalPrefix("/tslServer/api");
+  app.setGlobalPrefix("/tmpService/api");
   await app.listen(config.serverPort);
   console.log("server start success,linten port:", +config.serverPort);
 }

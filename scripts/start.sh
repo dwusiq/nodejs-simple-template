@@ -1,1 +1,1 @@
-cd src/ &&  pm2 start --name "tslServer" main.js
+pm2 start ecosystem.config.js

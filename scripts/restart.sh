@@ -1,1 +1,1 @@
-pm2 restart tslServer
+pm2 restart nodejsSimpleTemplate

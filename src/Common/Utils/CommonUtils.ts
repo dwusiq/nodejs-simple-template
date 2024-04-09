@@ -1,5 +1,4 @@
 import moment from "moment";
-import { PositionSideEnum } from "../BinanceEnum";
 const { Op } = require("sequelize");
 
 export class CommonUtils {
@@ -111,37 +110,5 @@ export class CommonUtils {
       return true;
     }
     return false;
-  }
-
-  /**
-   * @notice 打印debug日志
-   * @param constantStr 打印的日志的内容
-   */
-  static logDebug(constantStr: string) {
-    console.log(moment().format("YYYYMMDD HH:mm:ss"), "DEBUG", constantStr);
-  }
-
-  /**
-   * @notice 打印warn日志
-   * @param constantStr 打印的日志的内容
-   */
-  static logWarn(constantStr: string) {
-    console.log(moment().format("YYYYMMDD HH:mm:ss"), "WARN", constantStr);
-  }
-
-  /**
-   * @notice 打印info日志
-   * @param constantStr 打印的日志的内容
-   */
-  static logInfo(constantStr: string) {
-    console.log(moment().format("YYYYMMDD HH:mm:ss"), "INFO", constantStr);
-  }
-
-  /**
-   * @notice 打印error日志
-   * @param constantStr 打印的日志的内容
-   */
-  static logError(constantStr: string, err = {}) {
-    console.log(moment().format("YYYYMMDD HH:mm:ss"), "ERROR", constantStr, err);
   }
 }

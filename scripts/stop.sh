@@ -1,1 +1,1 @@
-pm2 stop tslServer
+pm2 stop nodejsSimpleTemplate
